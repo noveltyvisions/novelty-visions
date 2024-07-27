@@ -30,7 +30,6 @@ const VisionMission = ({ slice }) => {
           className={`font-lato text-2xl font-bold custom-shadow text-primary !mt-4`}
           text={item.title}
         />
-        hello
         <RichText 
           className={`!my-2 text-center text-primary text-xl w-3/4 tracking-tighter`}
           text={item.description}
