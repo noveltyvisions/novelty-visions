@@ -1,0 +1,24 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "eight",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"value": "whale",
+				"type": "Text"
+			},
+			"bold_description": {
+				"__TYPE__": "FieldContent",
+				"value": "immediately",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

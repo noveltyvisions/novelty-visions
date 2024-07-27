@@ -1,0 +1,19 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"vision_description": {
+				"__TYPE__": "FieldContent",
+				"value": "replace",
+				"type": "Text"
+			},
+			"mission_description": {
+				"__TYPE__": "FieldContent",
+				"value": "mad",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

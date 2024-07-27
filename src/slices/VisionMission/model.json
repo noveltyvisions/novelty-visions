@@ -1,0 +1,33 @@
+{
+  "id": "vision_mission",
+  "type": "SharedSlice",
+  "name": "VisionMission",
+  "description": "VisionMission",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "vision_description": {
+          "type": "Text",
+          "config": {
+            "label": "Vision Description",
+            "placeholder": ""
+          }
+        },
+        "mission_description": {
+          "type": "Text",
+          "config": {
+            "label": "Mission Description",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
