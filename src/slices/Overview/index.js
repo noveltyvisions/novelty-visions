@@ -10,7 +10,7 @@ const Overview = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex flex-col items-center justify-center mt-32 pb-2 space-y-4"
+      className="over-view flex flex-col items-center justify-center mt-32 pb-2 space-y-4"
     >
       <RichText 
         className={`font-lato text-secondary custom-shadow text-3xl uppercase tracking-tighter`}

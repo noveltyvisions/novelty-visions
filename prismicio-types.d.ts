@@ -5,6 +5,8 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomeDocumentDataSlicesSlice =
+  | WhyChooseUsSlice
+  | ServicesSlice
   | ProductsSlice
   | VisionMissionSlice
   | OverviewSlice
@@ -271,6 +273,78 @@ export type ProductsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Services → Default → Primary → Services Text*
+ */
+export interface ServicesSliceDefaultPrimaryServicesTextItem {
+  /**
+   * Title field in *Services → Default → Primary → Services Text*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.default.primary.services_text[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *Services → Default → Primary → Services Text*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.default.primary.services_text[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Services → Default → Primary*
+ */
+export interface ServicesSliceDefaultPrimary {
+  /**
+   * Services Text field in *Services → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.default.primary.services_text[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  services_text: prismic.GroupField<
+    Simplify<ServicesSliceDefaultPrimaryServicesTextItem>
+  >;
+}
+
+/**
+ * Default variation for Services Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServicesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Services*
+ */
+type ServicesSliceVariation = ServicesSliceDefault;
+
+/**
+ * Services Shared Slice
+ *
+ * - **API ID**: `services`
+ * - **Description**: Services
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesSlice = prismic.SharedSlice<
+  "services",
+  ServicesSliceVariation
+>;
+
+/**
  * Primary content in *VisionMission → Default → Primary*
  */
 export interface VisionMissionSliceDefaultPrimary {
@@ -325,6 +399,78 @@ export type VisionMissionSlice = prismic.SharedSlice<
   VisionMissionSliceVariation
 >;
 
+/**
+ * Item in *WhyChooseUs → Default → Primary → ChooseTexts*
+ */
+export interface WhyChooseUsSliceDefaultPrimaryChoosetextsItem {
+  /**
+   * Title field in *WhyChooseUs → Default → Primary → ChooseTexts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_choose_us.default.primary.choosetexts[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *WhyChooseUs → Default → Primary → ChooseTexts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_choose_us.default.primary.choosetexts[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *WhyChooseUs → Default → Primary*
+ */
+export interface WhyChooseUsSliceDefaultPrimary {
+  /**
+   * ChooseTexts field in *WhyChooseUs → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_choose_us.default.primary.choosetexts[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  choosetexts: prismic.GroupField<
+    Simplify<WhyChooseUsSliceDefaultPrimaryChoosetextsItem>
+  >;
+}
+
+/**
+ * Default variation for WhyChooseUs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WhyChooseUsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WhyChooseUsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *WhyChooseUs*
+ */
+type WhyChooseUsSliceVariation = WhyChooseUsSliceDefault;
+
+/**
+ * WhyChooseUs Shared Slice
+ *
+ * - **API ID**: `why_choose_us`
+ * - **Description**: WhyChooseUs
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WhyChooseUsSlice = prismic.SharedSlice<
+  "why_choose_us",
+  WhyChooseUsSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -352,10 +498,20 @@ declare module "@prismicio/client" {
       ProductsSliceDefaultPrimary,
       ProductsSliceVariation,
       ProductsSliceDefault,
+      ServicesSlice,
+      ServicesSliceDefaultPrimaryServicesTextItem,
+      ServicesSliceDefaultPrimary,
+      ServicesSliceVariation,
+      ServicesSliceDefault,
       VisionMissionSlice,
       VisionMissionSliceDefaultPrimary,
       VisionMissionSliceVariation,
       VisionMissionSliceDefault,
+      WhyChooseUsSlice,
+      WhyChooseUsSliceDefaultPrimaryChoosetextsItem,
+      WhyChooseUsSliceDefaultPrimary,
+      WhyChooseUsSliceVariation,
+      WhyChooseUsSliceDefault,
     };
   }
 }

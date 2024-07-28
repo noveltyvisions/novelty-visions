@@ -12,21 +12,21 @@ const Hero = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className={
-        `flex flex-col items-center justify-center pt-44 px-4 space-y-8`
+        `flex flex-col items-center justify-center pt-60 sm:pt-44 px-4 space-y-8`
       }
     >
       <PrismicNextImage 
         field={slice.primary.image_logo}
         height={200}
         width={500}
-        className="h-56 w-80"
+        className="h-30 w-40 sm:h-56 sm:w-80"
       />
       <RichText
-        className="font-lato text-[#044192] text-5xl font-semibold custom-shadow"
+        className="font-lato text-[#044192] text-3xl lg:text-5xl font-semibold custom-shadow"
         text={slice.primary.title}
       />
       <RichText 
-        className={`font-openSans text-[#FFC20A] text-5xl !mt-12 custom-shadow font-semibold tracking-tighter`}
+        className={`font-openSans text-[#FFC20A] text-3xl lg:text-5xl !mt-8 sm:!mt-12 custom-shadow font-semibold text-center tracking-tighter`}
         text={slice.primary.description}
       />
     </section>

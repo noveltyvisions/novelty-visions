@@ -18,6 +18,7 @@ export const theme = {
   },
   backgroundColor: {
     "primary": "#044192",
+    "secondary": "#FFC20A",
     "white":"#FFFF"
   },
   colors: {
