@@ -106,7 +106,7 @@ export default function NavBar() {
           {navItems.map((item, index) => (
             <li
               className={
-                `font-lato cursor-pointer text-4xl ${index === 4 ? 'text-primary bg-white rounded-full w-fit' : 'text-white'}`
+                `font-lato cursor-pointer text-4xl ${index === 4 ? 'text-white' : 'text-white'}`
               } 
               onClick={() => {
                 handleNavClick()
