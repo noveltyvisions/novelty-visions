@@ -71,7 +71,7 @@ export default function NavBar() {
 
   return (
     <>
-    <nav className="hidden anim-time hero-anim hero opacity-0 md:block transition-all rounded-full bg-primary py-4 px-8 fixed top-12 left-2/4 transform -translate-x-2/4 z-20">
+    <nav className="hidden anim-time hero-anim opacity-0 md:block transition-all rounded-full bg-primary py-4 px-8 fixed top-12 left-2/4 transform -translate-x-2/4 z-20">
       <ul className="flex items-center justify-center gap-12 mx-auto">
         {navItems.map((item, index) => (
           <li
@@ -86,10 +86,10 @@ export default function NavBar() {
         ))}
       </ul>
     </nav>
-    <nav className="block fixed top-12 right-2 border md:hidden">
+    <nav className="block hero-anim fixed top-12 right-2 border md:hidden z-20">
       <div
         onClick={handleNavClick}
-        className="border relative h-10 w-16 bg-white z-10"
+        className="border relative h-10 w-16 bg-white z-20"
       >
         <div 
           ref={topBar}
