@@ -1,4 +1,6 @@
+'use client'
 import RichText from "@/app/components/RichText";
+import { useAnimation } from "@/hooks/useAnimation";
 
 /**
  * @typedef {import("@prismicio/client").Content.OverviewSlice} OverviewSlice
@@ -6,11 +8,14 @@ import RichText from "@/app/components/RichText";
  * @param {OverviewProps}
  */
 const Overview = ({ slice }) => {
+
+  useAnimation('.over-view', '.over-view', true)
+
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="over-view flex flex-col items-center justify-center mt-32 pb-2 space-y-4"
+      className="over-view anim-time scale-down flex flex-col items-center justify-center mt-32 pb-2 space-y-4"
     >
       <RichText 
         className={`font-lato text-secondary custom-shadow text-3xl uppercase tracking-tighter`}

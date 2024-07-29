@@ -1,11 +1,11 @@
 import React from 'react'
 import RichText from './RichText'
 
-export default function BlockA({slice, bg, textColor, title}) {
+export default function BlockA({slice, bg, className, textColor, title}) {
   return (
     <div
         className={
-            `rounded-3xl flex flex-col items-center justify-center py-8 px-1 space-y-8 w-[90%] sm:w-[66%] max-w-[900px] ${bg}`
+            `rounded-3xl flex flex-col items-center justify-center py-8 px-1 space-y-8 w-[90%] sm:w-[66%] max-w-[900px] ${bg} ${className}`
         }
     >
         <RichText 

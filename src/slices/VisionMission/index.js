@@ -1,4 +1,6 @@
+'use client'
 import RichText from "@/app/components/RichText";
+import { useAnimation } from "@/hooks/useAnimation";
 
 /**
  * @typedef {import("@prismicio/client").Content.VisionMissionSlice} VisionMissionSlice
@@ -18,11 +20,13 @@ const VisionMission = ({ slice }) => {
     },
   ]
 
+  useAnimation('.vision-mission', '.vision-mission', true)
+
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex flex-col items-center justify-center pb-6"
+      className="vision-mission anim-time scale-down flex flex-col items-center justify-center pb-6"
     >
       {textData.map(item => (
         <>

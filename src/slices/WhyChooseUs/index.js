@@ -1,11 +1,15 @@
+'use client'
 import BlockA from "@/app/components/BlockA";
-
+import { useAnimation } from "@/hooks/useAnimation";
 /**
  * @typedef {import("@prismicio/client").Content.WhyChooseUsSlice} WhyChooseUsSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<WhyChooseUsSlice>} WhyChooseUsProps
  * @param {WhyChooseUsProps}
  */
 const WhyChooseUs = ({ slice }) => {
+
+  useAnimation('.choose', '.choose', true)
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -17,6 +21,7 @@ const WhyChooseUs = ({ slice }) => {
         bg="bg-white"
         textColor="text-primary"
         slice={slice.primary.choosetexts} 
+        className="choose anim-time scale-down"
       />
     </section>
   );

@@ -12,7 +12,7 @@ const Hero = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className={
-        `flex flex-col items-center justify-center pt-60 sm:pt-44 px-4 space-y-8`
+        `flex anim-time hero-anim flex-col items-center justify-center pt-60 sm:pt-44 px-4 space-y-8 opacity-0`
       }
     >
       <PrismicNextImage 
