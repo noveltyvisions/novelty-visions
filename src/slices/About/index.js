@@ -16,10 +16,10 @@ const About = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className=" py-12 px-6 sm:p-12 anim-time scale-down space-y-12 about flex flex-col items-center justify-center"
+      className="py-12 px-6 sm:p-12 anim-time scale-down space-y-12 about flex flex-col items-center justify-center"
     >
       <RichText 
-        className="uppercase text-secondary custom-shadow text-3xl font-lato"
+        className="uppercase text-secondary custom-shadow text-3xl mt-6 font-lato"
         text="ABOUT"
       />
       <div className="flex flex-wrap gap-20 sm:gap-60 items-center justify-center">
