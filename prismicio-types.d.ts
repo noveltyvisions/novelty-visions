@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomeDocumentDataSlicesSlice =
+  | ContactSlice
   | AboutSlice
   | WhyChooseUsSlice
   | ServicesSlice
@@ -172,6 +173,131 @@ type AboutSliceVariation = AboutSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
+
+/**
+ * Primary content in *Contact → Default → Primary*
+ */
+export interface ContactSliceDefaultPrimary {
+  /**
+   * Telephone field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.telephone
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  telephone: prismic.KeyTextField;
+
+  /**
+   * Telephone Icon field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.telephone_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  telephone_icon: prismic.ImageField<never>;
+
+  /**
+   * Email field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Email Icon field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.email_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  email_icon: prismic.ImageField<never>;
+
+  /**
+   * Facebook field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.facebook
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  facebook: prismic.KeyTextField;
+
+  /**
+   * Facebook Icon field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.facebook_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  facebook_icon: prismic.ImageField<never>;
+
+  /**
+   * Instagram field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.instagram
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  instagram: prismic.KeyTextField;
+
+  /**
+   * Instagram Icon field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.instagram_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  instagram_icon: prismic.ImageField<never>;
+
+  /**
+   * Description field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Contact Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Contact*
+ */
+type ContactSliceVariation = ContactSliceDefault;
+
+/**
+ * Contact Shared Slice
+ *
+ * - **API ID**: `contact`
+ * - **Description**: Contact
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSlice = prismic.SharedSlice<
+  "contact",
+  ContactSliceVariation
+>;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -590,6 +716,10 @@ declare module "@prismicio/client" {
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
+      ContactSlice,
+      ContactSliceDefaultPrimary,
+      ContactSliceVariation,
+      ContactSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

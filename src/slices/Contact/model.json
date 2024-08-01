@@ -1,0 +1,86 @@
+{
+  "id": "contact",
+  "type": "SharedSlice",
+  "name": "Contact",
+  "description": "Contact",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "telephone": {
+          "type": "Text",
+          "config": {
+            "label": "Telephone",
+            "placeholder": ""
+          }
+        },
+        "telephone_icon": {
+          "type": "Image",
+          "config": {
+            "label": "Telephone Icon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "email": {
+          "type": "Text",
+          "config": {
+            "label": "Email",
+            "placeholder": ""
+          }
+        },
+        "email_icon": {
+          "type": "Image",
+          "config": {
+            "label": "Email Icon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "facebook": {
+          "type": "Text",
+          "config": {
+            "label": "Facebook",
+            "placeholder": ""
+          }
+        },
+        "facebook_icon": {
+          "type": "Image",
+          "config": {
+            "label": "Facebook Icon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "instagram": {
+          "type": "Text",
+          "config": {
+            "label": "Instagram",
+            "placeholder": ""
+          }
+        },
+        "instagram_icon": {
+          "type": "Image",
+          "config": {
+            "label": "Instagram Icon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
