@@ -25,13 +25,13 @@ const Contact = ({ slice }) => {
         <ContactItem
           linkClassName="w-fit mx-auto px-4"
           textClassName="text-xl"
-          link={slice.primary.telephone}
+          link={`tel:${slice.primary.telephone}`}
           field={slice.primary.telephone_icon}
         />
         <ContactItem 
           linkClassName="px-6"
           textClassName="text-xl"
-          link={slice.primary.email}
+          link={`mailto:${slice.primary.email}`}
           field={slice.primary.email_icon}
         />
         <div className="flex w-full !justify-between">
