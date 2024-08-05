@@ -1,0 +1,59 @@
+{
+  "id": "product_showcase",
+  "type": "SharedSlice",
+  "name": "ProductShowcase",
+  "description": "ProductShowcase",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image_a": {
+          "type": "Image",
+          "config": {
+            "label": "Image A",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_b": {
+          "type": "Image",
+          "config": {
+            "label": "Image B",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_c": {
+          "type": "Image",
+          "config": {
+            "label": "Image C",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_d": {
+          "type": "Image",
+          "config": {
+            "label": "Image D",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_e": {
+          "type": "Image",
+          "config": {
+            "label": "Image E",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

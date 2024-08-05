@@ -5,6 +5,8 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomeDocumentDataSlicesSlice =
+  | FooterSlice
+  | ProductShowcaseSlice
   | ContactSlice
   | AboutSlice
   | WhyChooseUsSlice
@@ -300,6 +302,68 @@ export type ContactSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Footer → Default → Primary*
+ */
+export interface FooterSliceDefaultPrimary {
+  /**
+   * Title field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Logo field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Footer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FooterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FooterSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Footer*
+ */
+type FooterSliceVariation = FooterSliceDefault;
+
+/**
+ * Footer Shared Slice
+ *
+ * - **API ID**: `footer`
+ * - **Description**: Footer
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FooterSlice = prismic.SharedSlice<"footer", FooterSliceVariation>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -424,6 +488,91 @@ type OverviewSliceVariation = OverviewSliceDefault;
 export type OverviewSlice = prismic.SharedSlice<
   "overview",
   OverviewSliceVariation
+>;
+
+/**
+ * Primary content in *ProductShowcase → Default → Primary*
+ */
+export interface ProductShowcaseSliceDefaultPrimary {
+  /**
+   * Image A field in *ProductShowcase → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product_showcase.default.primary.image_a
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_a: prismic.ImageField<never>;
+
+  /**
+   * Image B field in *ProductShowcase → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product_showcase.default.primary.image_b
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_b: prismic.ImageField<never>;
+
+  /**
+   * Image C field in *ProductShowcase → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product_showcase.default.primary.image_c
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_c: prismic.ImageField<never>;
+
+  /**
+   * Image D field in *ProductShowcase → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product_showcase.default.primary.image_d
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_d: prismic.ImageField<never>;
+
+  /**
+   * Image E field in *ProductShowcase → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product_showcase.default.primary.image_e
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_e: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ProductShowcase Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProductShowcaseSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProductShowcaseSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ProductShowcase*
+ */
+type ProductShowcaseSliceVariation = ProductShowcaseSliceDefault;
+
+/**
+ * ProductShowcase Shared Slice
+ *
+ * - **API ID**: `product_showcase`
+ * - **Description**: ProductShowcase
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProductShowcaseSlice = prismic.SharedSlice<
+  "product_showcase",
+  ProductShowcaseSliceVariation
 >;
 
 /**
@@ -720,6 +869,10 @@ declare module "@prismicio/client" {
       ContactSliceDefaultPrimary,
       ContactSliceVariation,
       ContactSliceDefault,
+      FooterSlice,
+      FooterSliceDefaultPrimary,
+      FooterSliceVariation,
+      FooterSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
@@ -728,6 +881,10 @@ declare module "@prismicio/client" {
       OverviewSliceDefaultPrimary,
       OverviewSliceVariation,
       OverviewSliceDefault,
+      ProductShowcaseSlice,
+      ProductShowcaseSliceDefaultPrimary,
+      ProductShowcaseSliceVariation,
+      ProductShowcaseSliceDefault,
       ProductsSlice,
       ProductsSliceDefaultPrimaryProductsTextItem,
       ProductsSliceDefaultPrimary,

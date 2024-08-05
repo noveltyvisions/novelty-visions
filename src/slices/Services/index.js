@@ -14,7 +14,7 @@ const Services = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex items-center py-6 justify-center bg-primary"
+      className="flex items-center py-12 justify-center bg-primary"
       >
         <BlockA 
           title="Services"

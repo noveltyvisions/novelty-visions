@@ -5,6 +5,7 @@
 
 body {
   background: #FFFF;
+  overflow-x: hidden;
 }
 
 .custom-shadow {

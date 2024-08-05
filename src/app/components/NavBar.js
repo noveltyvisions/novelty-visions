@@ -3,6 +3,7 @@
 import { useRef, useState } from "react"
 import { handleClick } from "../lib/helper"
 import { useAnimation } from "@/hooks/useAnimation"
+import Link from "next/link"
 
 export default function NavBar() {
 
@@ -31,7 +32,7 @@ export default function NavBar() {
     },
     {
       text: 'Contact',
-      link: '.contact'
+      link: 'tel:+91 6282695659'
     },
   ]
 
@@ -78,10 +79,12 @@ export default function NavBar() {
             className={
               `font-lato cursor-pointer text-xl ${index === 4 ? 'text-primary bg-white rounded-full px-4 py-1' : 'text-white'}`
             } 
-            onClick={() => handleClick(item.link)}
+            onClick={() => {
+              if(index !== 4) handleClick(item.link)
+            }}
             key={index}
           >
-            {item.text}
+            {index === 4 ? <Link href={item.link}>{item.text}</Link> : item.text}
           </li>
         ))}
       </ul>
@@ -112,12 +115,14 @@ export default function NavBar() {
                 `font-lato cursor-pointer text-4xl ${index === 4 ? 'text-white' : 'text-white'}`
               } 
               onClick={() => {
-                handleNavClick()
-                handleClick(item.link)
+                if(index !== 4) {
+                  handleNavClick()
+                  handleClick(item.link)  
+                }
               }}
               key={index}
             >
-              {item.text}
+            {index === 4 ? <Link href={item.link}>{item.text}</Link> : item.text}
             </li>
           ))}
         </ul>

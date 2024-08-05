@@ -1,7 +1,7 @@
 import { PrismicNextImage } from '@prismicio/next'
 import React from 'react'
 
-export default function ContactItem({field, link, linkClassName, iconClassName, textClassName, isText, text}) {
+export default function ContactItem({field, link, linkClassName, iconClassName, textClassName, isText, text, linkText}) {
   return (
     <a className={`!bg-primary flex flex-col space-y-2 items-center py-6 justify-center rounded-3xl ${linkClassName}`} href={`${link}`}>
       <PrismicNextImage 
@@ -16,7 +16,7 @@ export default function ContactItem({field, link, linkClassName, iconClassName, 
           isText ?
           text
           :
-          link
+          linkText
         }
       </p>
     </a>
