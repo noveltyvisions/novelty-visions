@@ -1,4 +1,5 @@
 'use client'
+import RichTextB from "@/app/components/RichTextB";
 import { useAnimation } from "@/hooks/useAnimation";
 import { useMultipleImageAnimation } from "@/hooks/useMultipleImageAnimation";
 import { PrismicNextImage } from "@prismicio/next";
@@ -11,17 +12,21 @@ const ProductShowcase = ({ slice }) => {
 
   useMultipleImageAnimation('.product-showcase', '.image')
 
+  useAnimation('.first-block', '.first-block-img')
+  useAnimation('.second-block', '.second-block-img')
+  useAnimation('.third-block', '.third-block-img')
+
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-screen product-showcase overflow-x-hidden h-[120vh] my-12"
+      className="w-screen product-showcase overflow-x-hidden sm:h-[120vh] px-4 sm:px-0 my-12"
       style={{
         fontSize: '1vw'
       }}
     >
       <div 
-        className="text-[0.6rem] md:text-[0.6rem] xl:text-[0.8rem] 2xl:text-[1rem] h-full w-full relative"
+        className="text-[0.6rem] hidden sm:block md:text-[0.6rem] xl:text-[0.8rem] 2xl:text-[1rem] h-full w-full relative"
       > 
         <div className="absolute top-[10%] left-2/4 transform -translate-x-2/4">
           <p className="font-lato text-xl font-bold">
@@ -64,6 +69,51 @@ const ProductShowcase = ({ slice }) => {
           className="image anim-time absolute bottom-0 left-[8%] transform h-[20em] -z-10 w-[20em]"
         />
 
+      </div>
+      <div
+        className="sm:hidden space-y-12"
+      >
+        <div className="first-block space-y-6">
+          <RichTextB
+            highlightText="Halo"
+            productName="Smart Bin"
+            className="text-3xl"
+          />
+          <PrismicNextImage 
+            field={slice.primary.image_d}
+            className="anim-time first-block-img h-[34rem] w-full object-cover"
+          />
+          <PrismicNextImage 
+            field={slice.primary.image_e}
+            className="anim-time first-block-img h-[34rem] w-full object-cover"
+          />
+        </div>
+        <div className="second-block space-y-6">
+          <RichTextB
+            highlightText="LED"
+            productName="Screens"
+            className="text-3xl"
+          />
+          <PrismicNextImage 
+            field={slice.primary.image_a}
+            className="h-auto anim-time second-block-img w-full"
+          />
+        </div>
+        <div className="third-block space-y-6">
+          <RichTextB
+            highlightText="MOZART"
+            productName="Smart Toilet"
+            className="text-3xl"
+          />
+          <PrismicNextImage 
+            field={slice.primary.image_b}
+            className="h-[34rem] anim-time third-block-img w-full object-cover"
+            />
+          <PrismicNextImage 
+            field={slice.primary.image_c}
+            className="h-[34rem] anim-time third-block-img w-full object-cover"
+          />
+        </div>
       </div>
     </section>
   );
