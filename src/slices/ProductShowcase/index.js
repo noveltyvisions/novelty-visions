@@ -50,7 +50,6 @@ const ProductShowcase = ({ slice }) => {
           field={slice.primary.image_a}
           className="image anim-time absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4 h-[20em] w-[20em]"
         />
-
         <PrismicNextImage 
           field={slice.primary.image_b}
           className="image anim-time absolute top-[4%] right-[6%] transform h-[22em] w-[24em]"

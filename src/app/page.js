@@ -11,11 +11,12 @@ export default async function page() {
 }
 
 export async function generateMetadata() {
-  const client = createClient();
-  const page = await client.getSingle("home");
 
   return {
-    title: page.data.meta_title,
-    description: page.data.meta_description,
+    title: 'Novelty Visions',
+    description: 'Shaping the Future with Smart Urban Solutions',
+    openGraph: {
+      images: ['/meta-image.png']
+    }
   };
 }
