@@ -16,7 +16,18 @@ const openSans = Open_Sans({
 
 export const metadata = {
   title: "Novelty Visions",
-  description: "Welcome to Novelty Visions",
+  description: "Shaping the Future with Smart Urban Solutions",
+  alternates: {
+    languages: {
+      'en-US': '/en-US',
+      'de-DE': '/de-DE',
+    },
+  },
+  openGraph: {
+    title: 'Novelty Visions',
+    description: 'Shaping the Future with Smart Urban Solutions',
+    images: '/meta-image.png'
+  }
 };
 
 export default function RootLayout({ children }) {
