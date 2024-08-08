@@ -22,7 +22,7 @@ export const metadata = {
       'en-US': '/en-US',
       'de-DE': '/de-DE',
     },
-  },
+  },//
   openGraph: {
     title: 'Novelty Visions',
     description: 'Shaping the Future with Smart Urban Solutions',
